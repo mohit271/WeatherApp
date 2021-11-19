@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_001"
+    tools:context=".MainActivity">
+
+    <!--   <ImageView
+           android:id="@+id/idIVBack"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:adjustViewBounds="true"
+           android:scaleType="centerCrop"
+            /> -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/idLoading"
+                android:visibility="gone"
+                android:layout_centerInParent="true" />
+
+            <RelativeLayout
+                android:id="@+id/idRlHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+                <!-- <ImageView
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:scaleType="centerCrop"
+                       android:src="@color/black_shade"
+                       android:id="@+id/idIVBack"/>-->
+
+
+                <TextView
+                    android:id="@+id/idTVCityName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:padding="28dp"
+                    android:text="Your Location"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+                <LinearLayout
+                    android:id="@+id/idLl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/idTVCityName"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/idTVCity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="4.5"
+                        android:background="@android:color/transparent"
+                        android:hint="Enter City Name"
+
+                        android:padding="5dp"
+                        android:textColorHint="@color/black"
+                        app:hintTextColor="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/idEdtCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:imeOptions="actionSearch"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/idIvSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight=".5"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/search"
+                        app:tint="@color/black" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/idTvTemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/idLl"
+                    android:layout_margin="12dp"
+                    android:gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:text="25"
+                    android:textColor="@color/black"
+                    android:textSize="70dp" />
+
+                <ImageView
+                    android:id="@+id/idIvIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/idTvTemp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/back"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/idTvCondition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/idIvIcon"
+                    android:layout_margin="12dp"
+                    android:gravity="center"
+                    android:text="Condition"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/idTvForecast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/idTvCondition"
+                    android:layout_margin="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Today's Weather Forecast"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/idRvWeather"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/idTvForecast"
+                    android:layout_marginLeft="8dp"
+
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
